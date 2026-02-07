@@ -2,13 +2,15 @@ import { useState } from 'react'
 
 export default function Avatar({ className = '' }) {
   const [error, setError] = useState(false)
-  const [src, setSrc] = useState('/profile.jpeg')
+  // Use import.meta.env.BASE_URL to handle paths correctly on GitHub Pages
+  const basePath = import.meta.env.BASE_URL
+  const [src, setSrc] = useState(`${basePath}profile.jpeg`)
 
   const handleFallback = () => {
     // Try extensions in order of likelihood based on what we found
-    if (src === '/profile.jpeg') setSrc('/profile.jpg')
-    else if (src === '/profile.jpg') setSrc('/profile.png')
-    else if (src === '/profile.png') setSrc('/profile.svg')
+    if (src === `${basePath}profile.jpeg`) setSrc(`${basePath}profile.jpg`)
+    else if (src === `${basePath}profile.jpg`) setSrc(`${basePath}profile.png`)
+    else if (src === `${basePath}profile.png`) setSrc(`${basePath}profile.svg`)
     else setError(true)
   }
 
