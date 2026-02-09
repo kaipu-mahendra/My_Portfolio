@@ -16,24 +16,26 @@ export default function Avatar({ className = '' }) {
 
   if (error) {
     return (
-      <div
-        className={`w-40 h-40 md:w-64 md:h-64 rounded-2xl bg-gradient-to-br from-primary-600 to-indigo-700 flex items-center justify-center text-white text-4xl font-bold shadow-lg ring-4 ring-white ${className}`}
-      >
-        KM
+      <div className={`flex items-center justify-center ${className}`}>
+        <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-2xl bg-gradient-to-br from-primary-600 to-indigo-700 flex items-center justify-center text-white text-3xl sm:text-4xl font-bold shadow-lg ring-4 ring-white">
+          KM
+        </div>
       </div>
     )
   }
 
   return (
-    <div className={`relative ${className}`}>
-      <div className="absolute inset-0 bg-primary-600 rounded-2xl rotate-3 opacity-20 transform translate-y-2 translate-x-2"></div>
-      <img
-        src={src}
-        alt="Kaipu Mahendra"
-        className="relative w-40 h-40 md:w-64 md:h-64 rounded-2xl object-cover shadow-xl ring-4 ring-white bg-white"
-        onError={handleFallback}
-        loading="eager"
-      />
+    <div className={`relative inline-block ${className}`}>
+      <div className="absolute -inset-2 bg-primary-600/10 rounded-2xl rotate-3 blur-sm"></div>
+      <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56">
+        <img
+          src={src}
+          alt="Kaipu Mahendra"
+          className="w-full h-full rounded-2xl object-cover shadow-xl ring-4 ring-white bg-white"
+          onError={handleFallback}
+          loading="eager"
+        />
+      </div>
     </div>
   )
 }

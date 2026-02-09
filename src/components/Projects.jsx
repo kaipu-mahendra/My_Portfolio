@@ -90,21 +90,21 @@ function Badge({ children }) {
 
 function Section({ title, children }) {
   return (
-    <div className="mt-6">
-      <div className="font-semibold">{title}</div>
-      <div className="mt-2 text-gray-700">{children}</div>
+    <div className="mt-4 sm:mt-6">
+      <div className="font-semibold text-sm sm:text-base">{title}</div>
+      <div className="mt-2 text-sm sm:text-base text-gray-700">{children}</div>
     </div>
   )
 }
 
 function ProjectDetail({ p }) {
   return (
-    <div className="p-6 rounded-xl border bg-white">
-      <div className="flex items-center justify-between">
-        <div className="text-lg font-semibold">{p.title}</div>
+    <div className="p-4 sm:p-6 rounded-xl border bg-white">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div className="text-base sm:text-lg font-semibold">{p.title}</div>
         <a
           href={p.live}
-          className="px-3 py-1 rounded bg-primary-600 text-white"
+          className="px-3 py-1 rounded bg-primary-600 text-white text-center text-sm sm:text-base whitespace-nowrap self-start sm:self-auto"
           target="_blank"
           rel="noreferrer"
         >
@@ -113,14 +113,14 @@ function ProjectDetail({ p }) {
       </div>
       <Section title="Overview">{p.overview}</Section>
       <Section title="Problem Statement">
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base">
           {p.problem.map((it) => (
             <li key={it}>{it}</li>
           ))}
         </ul>
       </Section>
       <Section title="Solution">
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base">
           {p.solution.map((it) => (
             <li key={it}>{it}</li>
           ))}
@@ -134,38 +134,38 @@ function ProjectDetail({ p }) {
         </div>
       </Section>
       <Section title="Technical Architecture">
-        <div className="grid md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
           <div className="p-3 rounded border">
-            <div className="text-sm">Frontend</div>
-            <div className="font-medium">{p.architecture.frontend}</div>
+            <div className="text-xs sm:text-sm text-gray-600">Frontend</div>
+            <div className="font-medium text-sm sm:text-base">{p.architecture.frontend}</div>
           </div>
           <div className="p-3 rounded border">
-            <div className="text-sm">Backend</div>
-            <div className="font-medium">{p.architecture.backend}</div>
+            <div className="text-xs sm:text-sm text-gray-600">Backend</div>
+            <div className="font-medium text-sm sm:text-base">{p.architecture.backend}</div>
           </div>
           <div className="p-3 rounded border">
-            <div className="text-sm">AI</div>
-            <div className="font-medium">{p.architecture.ai}</div>
+            <div className="text-xs sm:text-sm text-gray-600">AI</div>
+            <div className="font-medium text-sm sm:text-base">{p.architecture.ai}</div>
           </div>
           <div className="p-3 rounded border">
-            <div className="text-sm">Integration</div>
-            <div className="font-medium">{p.architecture.integration}</div>
+            <div className="text-xs sm:text-sm text-gray-600">Integration</div>
+            <div className="font-medium text-sm sm:text-base">{p.architecture.integration}</div>
           </div>
           <div className="p-3 rounded border">
-            <div className="text-sm">Deployment</div>
-            <div className="font-medium">{p.architecture.deployment}</div>
+            <div className="text-xs sm:text-sm text-gray-600">Deployment</div>
+            <div className="font-medium text-sm sm:text-base">{p.architecture.deployment}</div>
           </div>
         </div>
       </Section>
       <Section title="Impact & Results">
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base">
           {p.impact.map((it) => (
             <li key={it}>{it}</li>
           ))}
         </ul>
       </Section>
       <Section title="What I Learned">
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base">
           {p.learned.map((it) => (
             <li key={it}>{it}</li>
           ))}
@@ -177,10 +177,10 @@ function ProjectDetail({ p }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 bg-gray-50 scroll-mt-24">
+    <section id="projects" className="py-12 sm:py-16 bg-gray-50 scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-2xl font-bold">Featured Projects</h2>
-        <div className="mt-6 grid gap-6">
+        <h2 className="text-xl sm:text-2xl font-bold">Featured Projects</h2>
+        <div className="mt-4 sm:mt-6 grid gap-4 sm:gap-6">
           {projects.map((p) => (
             <ProjectDetail key={p.title} p={p} />
           ))}
