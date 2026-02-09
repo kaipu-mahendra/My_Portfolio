@@ -13,6 +13,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 text-sm">
           <a href="#about" className="hover:text-primary-600">About</a>
+          <a href="#education" className="hover:text-primary-600">Education</a>
           <a href="#skills" className="hover:text-primary-600">Skills</a>
           <a href="#projects" className="hover:text-primary-600">Projects</a>
           <a href="#experience" className="hover:text-primary-600">Experience</a>
@@ -45,6 +46,13 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               About
+            </a>
+            <a 
+              href="#education" 
+              className="hover:text-primary-600 py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Education
             </a>
             <a 
               href="#skills" 

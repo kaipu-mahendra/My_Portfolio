@@ -1,5 +1,6 @@
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
+import Education from './components/Education.jsx'
 import Skills from './components/Skills.jsx'
 import Projects from './components/Projects.jsx'
 import Experience from './components/Experience.jsx'
@@ -12,6 +13,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <Education />
         <Skills />
         <Projects />
         <Experience />
